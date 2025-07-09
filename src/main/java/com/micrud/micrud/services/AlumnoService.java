@@ -9,6 +9,6 @@ public interface AlumnoService {
 
     List<Alumno> findAll();
     Optional<Alumno> findById(Long id);
-    Alumno save(Alumno product);
+    Alumno save(Alumno alumno);
     Optional<Alumno> deleteById(Long id);
 }
