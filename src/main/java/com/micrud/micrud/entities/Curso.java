@@ -31,4 +31,9 @@ public class Curso {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    //para test unitario
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

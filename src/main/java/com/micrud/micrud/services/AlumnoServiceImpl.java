@@ -18,7 +18,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 
     @Override
     public List<Alumno> findAll() {
-        return List.of();
+        return alumnoRepo.findAll();
     }
 
     public Optional<Alumno> findById(Long id) {
