@@ -28,4 +28,41 @@ class AlumnoTest {
 
         assertEquals("Programación", alumno.getCurso().getNombre());
     }
+
+    @Test
+    void alumnoSinNombreDebeTenerNombreNull() {
+        Alumno alumno = new Alumno();
+        assertNull(alumno.getName());
+    }
+
+    @Test
+    void cambiarNombreYGradoLuegoDeCreado() {
+        Alumno alumno = new Alumno();
+        alumno.setName("Luis");
+        alumno.setGrado("4to");
+
+        alumno.setName("Carlos");
+        alumno.setGrado("6to");
+
+        assertEquals("Carlos", alumno.getName());
+        assertEquals("6to", alumno.getGrado());
+    }
+
+    @Test
+    void alumnoSinCursoDebeTenerCursoNull() {
+        Alumno alumno = new Alumno();
+        assertNull(alumno.getCurso());
+    }
+
+    @Test
+    void dosAlumnosConMismoNombreNoSonElMismoObjeto() {
+        Alumno a1 = new Alumno();
+        a1.setName("Lucía");
+
+        Alumno a2 = new Alumno();
+        a2.setName("Lucía");
+
+        assertNotSame(a1, a2);
+    }
+
 }

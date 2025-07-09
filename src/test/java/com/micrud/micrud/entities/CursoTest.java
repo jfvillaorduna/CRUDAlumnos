@@ -21,4 +21,26 @@ class CursoTest {
 
         assertEquals("Ciencias", curso.getNombre());
     }
+
+    @Test
+    void nombreNullDebeGuardarYRecuperarComoNull() {
+        Curso curso = new Curso(null);
+        assertNull(curso.getNombre());
+    }
+
+    @Test
+    void crearCursoVacioYLuegoSetearNombre() {
+        Curso curso = new Curso();
+        curso.setNombre("Biología");
+
+        assertEquals("Biología", curso.getNombre());
+    }
+
+    @Test
+    void cursosIndependientesTienenNombresDistintos() {
+        Curso c1 = new Curso("Arte");
+        Curso c2 = new Curso("Química");
+
+        assertNotEquals(c1.getNombre(), c2.getNombre());
+    }
 }
