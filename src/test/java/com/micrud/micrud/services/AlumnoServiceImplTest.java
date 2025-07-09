@@ -1,8 +1,5 @@
 package com.micrud.micrud.services;
 
-import com.micrud.micrud.entities.Alumno;
-import com.micrud.micrud.repositories.AlumnoRepository;
-import com.micrud.micrud.services.AlumnoServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,5 +10,35 @@ class AlumnoServiceImplTest {
     void instanciaSinErrores() {
         AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
         assertNotNull(servicio);
+    }
+
+    @Test
+    void guardarAlumnoConRepositorioNullRetornaNull() {
+        AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
+        assertNull(servicio.save(null));
+    }
+
+    @Test
+    void guardarAlumnoConRepositorioNullLanzaExcepcion() {
+        AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
+        assertThrows(NullPointerException.class, () -> servicio.save(null));
+    }
+
+    @Test
+    void buscarAlumnoSinRepositorioDebeLanzarExcepcion() {
+        AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
+        assertThrows(NullPointerException.class, () -> servicio.findById(1L));
+    }
+
+    @Test
+    void eliminarAlumnoConRepositorioNullNoHaceNada() {
+        AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
+        assertDoesNotThrow(() -> servicio.deleteById(1L));
+    }
+
+    @Test
+    void listarAlumnosConRepositorioNullRetornaNullOLanzaExcepcion() {
+        AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
+        assertThrows(NullPointerException.class, () -> servicio.findAll());
     }
 }
