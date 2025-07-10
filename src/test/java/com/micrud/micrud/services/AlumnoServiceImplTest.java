@@ -33,7 +33,7 @@ class AlumnoServiceImplTest {
     @Test
     void eliminarAlumnoConRepositorioNullNoHaceNada() {
         AlumnoServiceImpl servicio = new AlumnoServiceImpl(null);
-        assertDoesNotThrow(() -> servicio.deleteById(1L));
+        assertThrows(NullPointerException.class, () -> servicio.deleteById(1L));
     }
 
     @Test

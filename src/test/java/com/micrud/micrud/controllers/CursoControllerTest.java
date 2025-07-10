@@ -13,12 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CursoControllerTest {
 
+    //Instanciación básica del controlador - No lanza error
     @Test
     void constructorCursoController() {
         CursoController controller = new CursoController(null);
         assertNotNull(controller);
     }
 
+    //Manejo de búsqueda fallida Devuelve 404
     @Test
     void buscarCursoInexistenteDebeRetornar404() {
         CursoService service = new CursoService() {
@@ -34,6 +36,7 @@ class CursoControllerTest {
         assertEquals(404, respuesta.getStatusCodeValue());
     }
 
+    //Eliminación fallida Devuelve 404
     @Test
     void eliminarCursoInexistenteDebeRetornar404() {
         CursoService service = new CursoService() {

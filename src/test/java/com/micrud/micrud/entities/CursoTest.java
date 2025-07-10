@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CursoTest {
 
+    //Constructor con parámetro funciona correctamente
     @Test
     void crearCursoConNombre() {
         Curso curso = new Curso("Matemáticas");
@@ -14,6 +15,7 @@ class CursoTest {
         assertEquals("Matemáticas", curso.getNombre());
     }
 
+    //Setter actualiza correctamente el atributo nombre
     @Test
     void cambiarNombreCurso() {
         Curso curso = new Curso("Historia");
@@ -22,12 +24,14 @@ class CursoTest {
         assertEquals("Ciencias", curso.getNombre());
     }
 
+    //Comportamiento seguro ante valores null
     @Test
     void nombreNullDebeGuardarYRecuperarComoNull() {
         Curso curso = new Curso(null);
         assertNull(curso.getNombre());
     }
 
+    //Constructor vacío + setter funciona como esperado
     @Test
     void crearCursoVacioYLuegoSetearNombre() {
         Curso curso = new Curso();
@@ -36,6 +40,7 @@ class CursoTest {
         assertEquals("Biología", curso.getNombre());
     }
 
+    //Independencia de instancia y estado entre objetos distintos
     @Test
     void cursosIndependientesTienenNombresDistintos() {
         Curso c1 = new Curso("Arte");

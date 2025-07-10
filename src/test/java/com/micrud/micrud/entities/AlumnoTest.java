@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AlumnoTest {
 
+    //Setters y Getters básicos funcionando correctamente
     @Test
     void crearAlumnoConDatos() {
         Alumno alumno = new Alumno();
@@ -20,6 +21,7 @@ class AlumnoTest {
         assertEquals("5to", alumno.getGrado());
     }
 
+    //Relación entre Alumno y Curso
     @Test
     void asignarCursoAAlumno() {
         Curso curso = new Curso("Programación");
@@ -29,12 +31,14 @@ class AlumnoTest {
         assertEquals("Programación", alumno.getCurso().getNombre());
     }
 
+    //Estado por defecto cuando no se setea nombre
     @Test
     void alumnoSinNombreDebeTenerNombreNull() {
         Alumno alumno = new Alumno();
         assertNull(alumno.getName());
     }
 
+    //Capacidad de actualizar atributos
     @Test
     void cambiarNombreYGradoLuegoDeCreado() {
         Alumno alumno = new Alumno();
@@ -48,12 +52,14 @@ class AlumnoTest {
         assertEquals("6to", alumno.getGrado());
     }
 
+    //Evita errores al acceder a curso no definido
     @Test
     void alumnoSinCursoDebeTenerCursoNull() {
         Alumno alumno = new Alumno();
         assertNull(alumno.getCurso());
     }
 
+    //Identidad de objetos basada en instancia, no en datos
     @Test
     void dosAlumnosConMismoNombreNoSonElMismoObjeto() {
         Alumno a1 = new Alumno();

@@ -29,7 +29,9 @@ public class CursoServiceImpl implements CursoService {
     }
 
     public void deleteById(Long id) {
-        cursoRepo.deleteById(id);
+        if (cursoRepo != null) {
+            cursoRepo.deleteById(id);
+        }
     }
 }
 
