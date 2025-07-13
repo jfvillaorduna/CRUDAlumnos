@@ -4,6 +4,7 @@ import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.services.CursoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,4 +46,11 @@ public class CursoController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/api/cursos")
+    @PreAuthorize("hasRole('USER')")
+    public List<Curso> listarCursos() {
+        return cursoService.findAll();
+    }
+
 }
