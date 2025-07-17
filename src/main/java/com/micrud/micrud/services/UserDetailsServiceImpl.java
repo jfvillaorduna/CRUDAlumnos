@@ -9,12 +9,14 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
+    //busca el usuario cuando hace login
     @Override
     public UserDetails loadUserByUsername(String username) {
         if (!username.equals("admin"))
             throw new UsernameNotFoundException("Usuario no encontrado");
-
-        return new User(username, "$2a$10$ZpWg3UVcEXAMPLEPassHash", // contraseña: 1234
+//crea un obj que representa al usuario y sus permisos
+        return new User(username,
+                "$2a$10$ptExzqRzpX6lxUf2DhyL3ONPpriT1oo0g5/XRq4iSQ73hxrwjPm/m", // contraseña: 1234
                 List.of(new SimpleGrantedAuthority("ROLE_USER")));
     }
 }
