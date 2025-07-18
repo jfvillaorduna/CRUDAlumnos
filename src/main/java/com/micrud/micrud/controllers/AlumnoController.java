@@ -4,6 +4,7 @@ import com.micrud.micrud.entities.Alumno;
 import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.services.AlumnoService;
 import com.micrud.micrud.services.CursoService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@Profile({"instancia1", "instancia2"})
 public class AlumnoController {
 
     private final AlumnoService alumnoService;

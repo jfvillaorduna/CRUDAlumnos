@@ -2,6 +2,7 @@ package com.micrud.micrud.controllers;
 
 import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.services.CursoService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Profile({"instancia1", "instancia2"})
 @RequestMapping("/api/cursos")
 public class CursoController {
 
@@ -54,3 +56,4 @@ public class CursoController {
     }
 
 }
+

@@ -5,13 +5,17 @@ import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.services.AlumnoService;
 import com.micrud.micrud.services.CursoService;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("instancia1")
+@SpringBootTest
 class AlumnoControllerTest {
 
     @Test

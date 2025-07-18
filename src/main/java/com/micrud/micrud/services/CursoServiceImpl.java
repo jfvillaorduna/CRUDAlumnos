@@ -2,12 +2,14 @@ package com.micrud.micrud.services;
 
 import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.repositories.CursoRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Profile({"instancia1", "instancia2"})
 public class CursoServiceImpl implements CursoService {
 
     private final CursoRepository cursoRepo;

@@ -3,9 +3,13 @@ package com.micrud.micrud.entities;
 import com.micrud.micrud.entities.Alumno;
 import com.micrud.micrud.entities.Curso;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("instancia1")
+@SpringBootTest
 class AlumnoTest {
 
     //Setters y Getters básicos funcionando correctamente

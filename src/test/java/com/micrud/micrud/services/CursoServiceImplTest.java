@@ -2,9 +2,13 @@ package com.micrud.micrud.services;
 
 import com.micrud.micrud.entities.Curso;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("instancia1")
+@SpringBootTest
 class CursoServiceImplTest {
 
     //Constructor del servicio funciona con null

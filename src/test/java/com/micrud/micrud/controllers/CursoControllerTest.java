@@ -5,12 +5,16 @@ import com.micrud.micrud.entities.Curso;
 import com.micrud.micrud.services.CursoService;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("instancia1")
+@SpringBootTest
 class CursoControllerTest {
 
     //Instanciación básica del controlador - No lanza error

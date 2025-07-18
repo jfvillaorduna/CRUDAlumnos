@@ -2,14 +2,18 @@ package com.micrud.micrud.services;
 
 import com.micrud.micrud.entities.Alumno;
 import com.micrud.micrud.repositories.AlumnoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Profile({"instancia1", "instancia2"})
 public class AlumnoServiceImpl implements AlumnoService {
 
+    @Autowired
     private final AlumnoRepository alumnoRepo;
 
     public AlumnoServiceImpl(AlumnoRepository alumnoRepo) {
